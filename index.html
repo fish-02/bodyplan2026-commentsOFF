@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#我就長這樣關你屁事｜外貌毒舌回收筒</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-live="polite">
+      <section class="screen screen-start is-active" data-screen="start">
+        <div class="phone-stage">
+          <div class="status-line">
+            <span>BodyPlan OS</span>
+            <span>99+ 凝視通知</span>
+          </div>
+          <div class="notification-stack" aria-hidden="true">
+            <div class="notice notice-a">親戚關心型：你是不是又胖了？</div>
+            <div class="notice notice-b">社群留言區型：這臉也敢發？</div>
+            <div class="notice notice-c">假好意建議型：再瘦一點就更好看</div>
+            <div class="notice notice-d">自我內耗型：我是不是不夠好看？</div>
+          </div>
+          <div class="start-copy">
+            <p class="eyebrow">外貌毒舌回收筒</p>
+            <h1><span>#我就長這樣</span><span>關你屁事</span></h1>
+            <p>
+              那些被丟進你身體裡的評論，<br />今天請它們原路退回。
+            </p>
+          </div>
+          <button class="primary-btn" type="button" data-next="select">
+            Start
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="select">
+        <header class="step-header">
+          <h2>選一句你想回收的外貌評論</h2>
+        </header>
+
+        <div class="notification-grid" id="quoteOptions"></div>
+
+        <label class="custom-entry">
+          <span>自行輸入最扯的一句</span>
+          <textarea
+            id="customQuote"
+            rows="3"
+            maxlength="60"
+            placeholder="例如：你這樣穿不適合吧？"
+          ></textarea>
+        </label>
+
+        <div class="action-row">
+          <button class="ghost-btn" type="button" data-next="start">返回</button>
+          <button class="primary-btn" type="button" id="quoteNext">下一步</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="impact">
+        <header class="step-header">
+          <h2>這句話改變你什麼</h2>
+        </header>
+
+        <div class="body-zone">
+          <div class="body-outline" aria-hidden="true">
+            <span class="body-noise noise-1">LOOK</span>
+            <span class="body-noise noise-2">SCORE</span>
+            <span class="body-noise noise-3">FIX</span>
+          </div>
+          <div class="impact-list" id="impactOptions"></div>
+        </div>
+
+        <label class="custom-entry">
+          <span>自行輸入它改變你的地方</span>
+          <textarea
+            id="customImpact"
+            rows="3"
+            maxlength="60"
+            placeholder="例如：我開始不敢看鏡子"
+          ></textarea>
+        </label>
+
+        <div class="action-row">
+          <button class="ghost-btn" type="button" data-next="select">返回</button>
+          <button class="primary-btn" type="button" id="impactNext">準備回收</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="recycle">
+        <header class="step-header">
+          <h2>一鍵回收</h2>
+        </header>
+
+        <div class="recycle-chamber" id="recycleChamber">
+          <p class="selected-label">待回收評論</p>
+          <div class="quote-fragment" id="quoteFragment"></div>
+          <div class="glitch-cloud" id="glitchCloud" aria-hidden="true"></div>
+        </div>
+
+        <p class="microcopy" id="effectCaption">
+          點下去，讓這句話碎成雜訊。
+        </p>
+
+        <div class="action-row">
+          <button class="ghost-btn" type="button" data-next="impact">返回</button>
+          <button class="primary-btn danger" type="button" id="recycleButton">
+            一鍵回收
+          </button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="result">
+        <header class="step-header">
+          <h2>回收　大☆成★功☆</h2>
+        </header>
+
+        <canvas id="shareCanvas" width="1080" height="1920"></canvas>
+
+        <div class="cta-block">
+          <p>這不是變漂亮的團購課程</p>
+          <h3>這是一場把身體領回來的演出</h3>
+          <br />
+          <p><b>《身體和解計畫BodyPlan2026》</b></p>
+          <p>允許變化、允許存在、允許不完美</p>
+          <p>進劇場，允許自己成為自己</p>
+        </div>
+
+        <div class="button-grid">
+          <button class="primary-btn" type="button" id="shareButton">
+            分享至 IG 限動
+          </button>
+          <button class="ghost-btn" type="button" id="downloadButton">
+            儲存至相片
+          </button>
+          <a class="ticket-btn" href="https://www.opentix.life/event/2059089842891776000" id="ticketLink" target="_blank" rel="noreferrer">購票連結</a>
+          <button class="ghost-btn" type="button" id="restartButton">
+            再回收一句
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <audio id="soundShredder" src="sound/686263__mattfinarelli__paper-shredder.mp3" preload="auto"></audio>
+    <audio id="soundExplosion" src="sound/849842__jeffpearson__explosion.mp3" preload="auto"></audio>
+    <audio id="soundFlush" src="sound/264988__sethlind__2-toilet-flushes.wav" preload="auto"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
